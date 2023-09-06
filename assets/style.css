@@ -1,0 +1,13 @@
+button {
+  margin: 0.5rem !important;
+  color: brown;
+}
+
+.card {
+  color: brown !important;
+  margin: 1rem !important;
+}
+
+h1 {
+  text-align: center;
+}

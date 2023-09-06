@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Better Weather App</title>
+    <link rel="styleSheet" href="./assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header style="border: 2px solid black">
+      <h1>The Better Weather App</h1>
+    </header>
+    <div class="d-flex">
+      <!-- Nav -->
+      <nav
+        id="nav"
+        style="border: 2px solid black"
+        class="d-flex flex-column align-items-center col-3"
+      >
+        <!-- search  -->
+        <h2>City Search</h2>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            id="searchButton"
+            class="btn btn-outline-success"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <br />
+        <ul class="d-flex flex-column">
+          <button>Atlanta</button>
+          <button>Denver</button>
+          <button>Seattle</button>
+          <button>San Francisco</button>
+          <button>Orlando</button>
+          <button>New York</button>
+          <button>Chicago</button>
+          <button>Austin</button>
+        </ul>
+      </nav>
+      <!-- main  -->
+      <main class="col-9">
+        <article id="mainCity" class="p-1" style="border: 2px solid black">
+          <!-- main day city  -->
+          <div class="p-1" style="border: 2px solid black">
+            <h2>City name</h2>
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
+          </div>
+          <!-- cards  -->
+          <div class="d-flex justify-content-center" id="five-day">
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <p class="card-text">Temp</p>
+                <p class="card-text">Wind</p>
+                <p class="card-text">Humidity</p>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <p class="card-text">Temp</p>
+                <p class="card-text">Wind</p>
+                <p class="card-text">Humidity</p>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <p class="card-text">Temp</p>
+                <p class="card-text">Wind</p>
+                <p class="card-text">Humidity</p>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <p class="card-text">Temp</p>
+                <p class="card-text">Wind</p>
+                <p class="card-text">Humidity</p>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <p class="card-text">Temp</p>
+                <p class="card-text">Wind</p>
+                <p class="card-text">Humidity</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
