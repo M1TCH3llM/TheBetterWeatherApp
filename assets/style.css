@@ -3,10 +3,40 @@ button {
   color: brown;
 }
 
+#theWholeThing {
+  box-shadow: 10px 10px 10px 10px rgba(2, 0, 36, 1);
+}
+
 .card {
-  color: rgb(42, 58, 165) !important;
+  color: rgb(32, 45, 125) !important;
   margin: 1rem !important;
-  background-color: rgba(255, 253, 250, 0.894) !important;
+  background-color: rgba(227, 227, 227, 0.764) !important;
+}
+
+nav {
+  color: azure;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+#cityButton {
+  color: rgb(32, 45, 125) !important;
+  padding: 0.25rem 1rem;
+  border: 1px solid grey;
+  background-color: rgba(240, 255, 255, 0.932);
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+#cityButton:hover {
+  color: azure !important;
+  background-color: rgb(32, 45, 125);
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 h1 {
@@ -14,11 +44,16 @@ h1 {
   padding: 1rem;
 }
 
+nav h2 {
+  margin: 1rem;
+}
+
 main {
   background-image: url(https://www.thehomepagenetwork.com/wp-content/uploads/2022/01/Banner-Weather.jpg);
 }
 
 header {
+  border: 2px solid darkblue;
   color: azure;
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -30,12 +65,28 @@ header {
 }
 
 #today {
-  background-color: rgba(255, 253, 250, 0.894);
+  color: rgb(32, 45, 125) !important;
+  background-color: rgba(227, 227, 227, 0.764) !important;
   border-radius: 30px;
   margin: 0.5rem;
-  
 }
 
 #main {
   margin: 0.5rem 1rem;
+}
+
+footer {
+  background-image: url(https://www.magnusonsod.com/wp-content/uploads/2018/04/grass-banner.jpg);
+  background-position: top;
+  height: 10rem;
+  text-align: center;
+  color: azure;
+  border-top: 2px solid darkblue;
+}
+
+footer h3 {
+  background-color: rgba(8, 8, 130, 0.331);
+  width: 31rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 20px rgba(8, 8, 130, 0.331);
 }

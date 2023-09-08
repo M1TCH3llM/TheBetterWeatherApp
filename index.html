@@ -14,16 +14,12 @@
   </head>
   <body>
     <!-- Header -->
-    <header id="header" style="border: 2px solid black">
+    <header id="header">
       <h1>☀️ The Better Weather App ⚡️</h1>
     </header>
-    <div class="d-flex">
+    <div id="theWholeThing" class="d-flex">
       <!-- Nav -->
-      <nav
-        id="nav"
-        style="border: 2px solid black"
-        class="d-flex flex-column align-items-center col-3"
-      >
+      <nav id="nav" class="d-flex flex-column align-items-center col-3">
         <!-- search  -->
         <h2>City Search</h2>
         <form class="d-flex" role="search">
@@ -31,7 +27,7 @@
             id="searchT"
             class="form-control me-2"
             type="search"
-            placeholder="Search"
+            placeholder="Look Up City"
             aria-label="Search"
           />
           <button
@@ -43,6 +39,7 @@
           </button>
         </form>
         <br />
+        <h3>Recent Searches</h3>
         <ul id="savedCities" class="d-flex flex-column">
           <button>Atlanta</button>
           <button>Denver</button>
@@ -61,6 +58,7 @@
           <div id="today" class="p-1" style="border: 2px solid gray">
             <div id="main">
               <h2 id="cityName">City name</h2>
+              <img id="todayImg" src="" alt="" />
               <p id="currentTemp">Temp</p>
               <p id="currentWind">Wind</p>
               <p id="currentHumid">Humidity</p>
@@ -127,6 +125,9 @@
         </article>
       </main>
     </div>
+    <footer class="d-flex justify-content-center align-items-center">
+      <h3>🌩️ Weather Brought to You By Mitch 🌩️</h3>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

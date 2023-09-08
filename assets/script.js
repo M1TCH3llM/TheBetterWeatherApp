@@ -4,6 +4,7 @@ var cityNameEl = document.getElementById("cityName");
 var currentTempEl = document.getElementById("currentTemp");
 var currentHumidEl = document.getElementById("currentHumid");
 var currentWindEl = document.getElementById("currentWind");
+var currentImgEl = document.getElementById("todayImg");
 var pastSearch = JSON.parse(localStorage.getItem("cities")) || [];
 
 function getWeather(city) {
@@ -38,10 +39,13 @@ function fiveDayForecast(data) {
 }
 
 function displayWeather(data) {
+  var weatherEmoji = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
   cityNameEl.textContent = data.name;
   currentTempEl.textContent = `Temp: ${data.main.temp}°`;
   currentHumidEl.textContent = `Humidity: ${data.main.humidity}%`;
   currentWindEl.textContent = `Wind Speed ${data.wind.speed} Mph`;
+  currentImgEl.setAttribute("src", weatherEmoji);
 }
 
 function saveSearch(cityName) {
@@ -58,6 +62,7 @@ function renderSaveSearch() {
   for (const city of pastSearch) {
     var cityEl = document.createElement("button");
     cityEl.textContent = city;
+    cityEl.setAttribute("id", "cityButton");
 
     cityEl.addEventListener("click", function () {
       var userInput = city;
@@ -72,14 +77,11 @@ function fiveDayDisplay(data) {
   var fiveDay = data.list.filter(
     (obj) => obj.dt_txt.split(" ")[1] === "12:00:00"
   );
-  //   var fiveDay = [3, 11, 19, 27, 35];
   var cardContainer = document.getElementById("five-day");
 
   cardContainer.textContent = "";
 
   for (var i = 0; 1 < fiveDay.length; i++) {
-    // var dayIndex = fiveDay[i];
-    // var dayData = data.list[dayIndex];
     var dayData = fiveDay[i];
 
     var dayDate = dayjs(dayData.dt_txt).format("MM/DD/YYYY");
