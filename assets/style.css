@@ -1,15 +1,41 @@
-
-
 button {
   margin: 0.5rem !important;
   color: brown;
 }
 
 .card {
-  color: brown !important;
+  color: rgb(42, 58, 165) !important;
   margin: 1rem !important;
+  background-color: rgba(255, 253, 250, 0.894) !important;
 }
 
 h1 {
   text-align: center;
+  padding: 1rem;
+}
+
+main {
+  background-image: url(https://www.thehomepagenetwork.com/wp-content/uploads/2022/01/Banner-Weather.jpg);
+}
+
+header {
+  color: azure;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(50, 50, 153, 1) 44%,
+    rgba(72, 255, 236, 1) 100%
+  );
+}
+
+#today {
+  background-color: rgba(255, 253, 250, 0.894);
+  border-radius: 30px;
+  margin: 0.5rem;
+  
+}
+
+#main {
+  margin: 0.5rem 1rem;
 }

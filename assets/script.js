@@ -4,6 +4,7 @@ var cityNameEl = document.getElementById("cityName");
 var currentTempEl = document.getElementById("currentTemp");
 var currentHumidEl = document.getElementById("currentHumid");
 var currentWindEl = document.getElementById("currentWind");
+var pastSearch = JSON.parse(localStorage.getItem("cities")) || [];
 
 function getWeather(city) {
   var requestWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city},us&units=imperial&APPID=6125957e3b746825efbf44ae31af7452`;
@@ -44,39 +45,56 @@ function displayWeather(data) {
 }
 
 function saveSearch(cityName) {
-  var pastSearch = JSON.parse(localStorage.getItem("cities")) || [];
   if (!pastSearch.includes(cityName)) {
     pastSearch.push(cityName);
     localStorage.setItem("cities", JSON.stringify(pastSearch));
   }
+  renderSaveSearch();
+}
+
+function renderSaveSearch() {
+  var savedCityList = document.getElementById("savedCities");
+  savedCityList.textContent = "";
+  for (const city of pastSearch) {
+    var cityEl = document.createElement("button");
+    cityEl.textContent = city;
+
+    cityEl.addEventListener("click", function () {
+      var userInput = city;
+      getWeather(userInput);
+    });
+
+    savedCityList.appendChild(cityEl);
+  }
 }
 
 function fiveDayDisplay(data) {
-  //   var dayOne = data.list[3];
-  //   var dayTwo = data.list[11];
-  //   var dayThree = data.list[19];
-  //   var dayFour = data.list[27];
-  //   var dayFive = data.list[35];
-
-  var fiveDay = [3, 11, 19, 27, 35];
+  var fiveDay = data.list.filter(
+    (obj) => obj.dt_txt.split(" ")[1] === "12:00:00"
+  );
+  //   var fiveDay = [3, 11, 19, 27, 35];
   var cardContainer = document.getElementById("five-day");
 
   cardContainer.textContent = "";
 
   for (var i = 0; 1 < fiveDay.length; i++) {
-    var dayIndex = fiveDay[i];
-    var dayData = data.list[dayIndex];
+    // var dayIndex = fiveDay[i];
+    // var dayData = data.list[dayIndex];
+    var dayData = fiveDay[i];
 
-    var dayDate = dayData.dt_txt;
+    var dayDate = dayjs(dayData.dt_txt).format("MM/DD/YYYY");
     var temperature = dayData.main.temp;
     var windSpeed = dayData.wind.speed;
     var humidity = dayData.main.humidity;
+    var img = dayData.weather[0].icon;
+    var alt = dayData.weather[0].description;
 
     var weatherCard = document.createElement("div");
     weatherCard.className = "card";
     weatherCard.innerHTML = `
     <div class="card-body">
-      <h5 class="card-title">Day ${dayDate}</h5>
+      <h5 class="card-title">${dayDate}</h5>
+      <img src="https://openweathermap.org/img/wn/${img}.png" alt="${alt}">
       <p class="card-text">Temperature: ${temperature}°F</p>
       <p class="card-text">Wind Speed: ${windSpeed} Mph</p>
       <p class="card-text">Humidity: ${humidity}%</p>
@@ -92,3 +110,5 @@ searchButton.addEventListener("click", function (event) {
   var cityVal = searchInput.value;
   getWeather(cityVal);
 });
+
+renderSaveSearch();

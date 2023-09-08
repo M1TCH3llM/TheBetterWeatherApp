@@ -14,8 +14,8 @@
   </head>
   <body>
     <!-- Header -->
-    <header style="border: 2px solid black">
-      <h1>The Better Weather App</h1>
+    <header id="header" style="border: 2px solid black">
+      <h1>☀️ The Better Weather App ⚡️</h1>
     </header>
     <div class="d-flex">
       <!-- Nav -->
@@ -28,7 +28,7 @@
         <h2>City Search</h2>
         <form class="d-flex" role="search">
           <input
-          id="searchT"
+            id="searchT"
             class="form-control me-2"
             type="search"
             placeholder="Search"
@@ -43,7 +43,7 @@
           </button>
         </form>
         <br />
-        <ul class="d-flex flex-column">
+        <ul id="savedCities" class="d-flex flex-column">
           <button>Atlanta</button>
           <button>Denver</button>
           <button>Seattle</button>
@@ -56,13 +56,15 @@
       </nav>
       <!-- main  -->
       <main class="col-9">
-        <article id="mainCity" class="p-1" style="border: 2px solid black">
+        <article id="mainCity" class="p-1">
           <!-- main day city  -->
-          <div class="p-1" style="border: 2px solid black">
-            <h2 id="cityName">City name</h2>
-            <p id="currentTemp">Temp</p>
-            <p id="currentWind">Wind</p>
-            <p id="currentHumid">Humidity</p>
+          <div id="today" class="p-1" style="border: 2px solid gray">
+            <div id="main">
+              <h2 id="cityName">City name</h2>
+              <p id="currentTemp">Temp</p>
+              <p id="currentWind">Wind</p>
+              <p id="currentHumid">Humidity</p>
+            </div>
           </div>
           <!-- cards  -->
           <div class="d-flex justify-content-center" id="five-day">
@@ -130,6 +132,7 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="./assets/script.js"></script>
   </body>
 </html>
