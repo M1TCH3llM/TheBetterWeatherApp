@@ -35,4 +35,8 @@ This project is not licensed for redistribution or modification.
 
 ## Link
 
+[Active Site](https://m1tch3llm.github.io/TheBetterWeatherApp/)
+
 ## Photo
+
+![Photo of site](./assets/Screenshot%202023-09-07%20at%2011.52.53%20PM.png)
